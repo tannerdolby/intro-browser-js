@@ -22,16 +22,11 @@ var p_att = document.createAttribute("class");
 p_att.value = "section-text";
 p.setAttributeNode(p_att);
 
-const p2 = document.createElement("p");
-var p2_att = document.createAttribute("class");
-p2_att.value = "caption";
-p2.setAttributeNode(p2_att);
-
-// Give the header and paragraph element some inner text!
+// Give the <h1> and <p> element some inner text!
 h1.innerText = "Hello world!";
 p.innerText = "lorem ipsum dorem dolor.";
 
-// Create img for coding cat
+// Create an <img> for cat-coding.jpg
 const img = document.createElement("img");
 var img_attr = document.createAttribute("class");
 var img_src = document.createAttribute("src");
@@ -43,11 +38,19 @@ img.setAttributeNode(img_attr);
 img.setAttributeNode(img_src);
 img.setAttributeNode(img_alt);
 
+// Create <p> for image description
+const p2 = document.createElement("p");
+var p2_att = document.createAttribute("class");
+p2_att.value = "caption";
+p2.innerHTML = `${img_alt.value} This photo was found on bukk.it`
+p2.setAttributeNode(p2_att);
+
 // Bind the virtually created HTML elements to the DOM Tree.
 section.appendChild(h1);
 section.appendChild(p);
 section.appendChild(img);
+section.appendChild(p2);
 main.appendChild(section);
 
-// Append the first div element to the documents body.
+// Append the first <main> element to the documents body.
 document.body.appendChild(main);
