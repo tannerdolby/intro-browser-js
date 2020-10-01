@@ -31,12 +31,15 @@ const img = document.createElement("img");
 var img_attr = document.createAttribute("class");
 var img_src = document.createAttribute("src");
 var img_alt = document.createAttribute("alt");
+var img_loading = document.createAttribute("loading");
 img_attr.value = "photo";
 img_src.value = "cat-coding.jpg";
-img_alt.value = "Cat, presumably coding a very complex system on mini macbook pro."
+img_alt.value = "Cat, presumably coding a very complex system on mini macbook pro.";
+img_loading.value = "lazy";
 img.setAttributeNode(img_attr);
 img.setAttributeNode(img_src);
 img.setAttributeNode(img_alt);
+img.setAttributeNode(img_loading);
 
 // Create <p> for image description
 const p2 = document.createElement("p");
