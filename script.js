@@ -1,52 +1,32 @@
 // Create <main> landmark element
 const main = document.createElement("main");
-var main_attr = document.createAttribute("class");
-main_attr.value = "page-wrapper";
-main.setAttributeNode(main_attr);
+main.setAttribute("class", "page-wrapper");
 
 // Create <section> landmark element
 const section = document.createElement("section");
-var section_attr = document.createAttribute("class");
-section_attr.value = "page-content";
-section.setAttributeNode(section_attr);
+section.setAttribute("class", "page-content");
 
 // Create <h1> element
 const h1 = document.createElement("h1");
-var h1_att = document.createAttribute("class");
-h1_att.value = "section-title";
-h1.setAttributeNode(h1_att);
+h1.setAttribute("class", "section-title"); 
+h1.innerText = "Hello world!";
 
 // Create <p> element
 const p = document.createElement("p");
-var p_att = document.createAttribute("class");
-p_att.value = "section-text";
-p.setAttributeNode(p_att);
-
-// Give the <h1> and <p> element some inner text!
-h1.innerText = "Hello world!";
+p.setAttribute("class", "section-text");
 p.innerText = "lorem ipsum dorem dolor.";
 
 // Create an <img> for cat-coding.jpg
 const img = document.createElement("img");
-var img_attr = document.createAttribute("class");
-var img_src = document.createAttribute("src");
-var img_alt = document.createAttribute("alt");
-var img_loading = document.createAttribute("loading");
-img_attr.value = "photo";
-img_src.value = "cat-coding.jpg";
-img_alt.value = "Cat, presumably coding a very complex system on mini macbook pro.";
-img_loading.value = "lazy";
-img.setAttributeNode(img_attr);
-img.setAttributeNode(img_src);
-img.setAttributeNode(img_alt);
-img.setAttributeNode(img_loading);
+img.setAttribute("class", "photo");
+img.setAttribute("src", "cat-coding.jpg");
+img.setAttribute("alt", "Cat, presumably coding a very complex system.");
+img.setAttribute("loading", "lazy");
 
 // Create <p> for image description
 const p2 = document.createElement("p");
-var p2_att = document.createAttribute("class");
-p2_att.value = "caption";
-p2.innerHTML = `${img_alt.value} This photo was found on bukk.it`
-p2.setAttributeNode(p2_att);
+p2.setAttribute("class", "caption");
+p2.innerHTML = `${img.alt}. This photo was found on bukk.it`;
 
 // Bind the virtually created HTML elements to the DOM Tree.
 section.appendChild(h1);
